@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :players
   root "clubs#index"
   resources :clubs
   devise_for :users
