@@ -38,7 +38,7 @@
               </li>
               <li>
                 <% if user_signed_in? %>
-                  <%= link_to "Wyloguj się", destroy_user_session_path %>
+                  <%= link_to "Wyloguj się", destroy_user_session_path, method: :delete %>
                 <% else %>
                   <%= link_to "Zaloguj się", new_user_session_path %>
                 <% end %>
