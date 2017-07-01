@@ -53,7 +53,11 @@
 </nav>
 <div class="container">
   <div class="row">
-    <hr>
+    <% if flash[:alert] %>
+          <div class="alert alert-success">
+            <%= flash[:alert] %>
+          </div>
+        <% end %>
   </div>
   <div class="row">
     <%= yield %>

@@ -1,7 +1,12 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+
+<% if flash[:notice].present? %>
+  <div class="alert alert-success text-center">
+    <%= notice %>
+  </div>
+<% end %>
+
+<strong>Name:</strong>
   <%= @club.name %>
 </p>
 
@@ -15,5 +20,6 @@
   <%= @club.start_year %>
 </p>
 
-<%= link_to 'Edit', edit_club_path(@club) %> |
-<%= link_to 'Back', clubs_path %>
+
+<!-- <%= link_to 'Edit', edit_club_path(@club) %> |
+<%= link_to 'Back', clubs_path %> -->

@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <%= form_for(@club) do |f| %>
   <% if @club.errors.any? %>
     <div id="error_explanation">
@@ -10,20 +11,19 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, "Nazwa Klubu" %><br>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :address %><br>
-    <%= f.text_area :address %>
+    <%= f.text_area :address, class: "form-control"  %>
   </div>
-  <div class="field">
-    <%= f.label :start_year %><br>
-    <%= f.datetime_select :start_year %>
+  <div class="form-group">
+    <%= f.label :start_year, "Data założenia klubu" %><br>
+    <%= f.datetime_select :start_year, class: "form-control"  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Dodaj Klub", class: "btn btn-primary" %>
   </div>
 <% end %>
