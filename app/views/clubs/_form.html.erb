@@ -39,6 +39,11 @@
     <%= f.select :stadium_id, @stadiums %>
   </div>
 
+  <div class="form-group">
+    <%= f.label 'Główny sponsor' %><br>
+    <%= f.select :sponsor_id, @sponsors %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Dodaj Klub", class: "btn btn-primary" %>
   </div>

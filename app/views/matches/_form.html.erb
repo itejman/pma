@@ -1,0 +1,35 @@
+<%= form_for(@match) do |f| %>
+  <% if @match.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@match.errors.count, "error") %> prohibited this match from being saved:</h2>
+
+      <ul>
+      <% @match.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :host_id %><br>
+    <%= f.select :host_id, @clubs %>
+  </div>
+  <div class="field">
+    <%= f.label :guest_id %><br>
+    <%= f.select :guest_id, @clubs %>
+  </div>
+  <div class="field">
+    <%= f.label :host_goals %><br>
+    <%= f.number_field :host_goals %>
+  </div>
+  <div class="field">
+    <%= f.label :guest_goals %><br>
+    <%= f.number_field :guest_goals %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

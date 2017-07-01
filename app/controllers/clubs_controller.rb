@@ -18,6 +18,7 @@ class ClubsController < ApplicationController
     @leagues = League.all_club_name_with_ids
     @coaches = Coach.all_coach_name_with_ids
     @stadiums = Stadium.all_stadnium_name_with_ids
+    @sponsors = Sponsor.all_sponsor_name_with_ids
   end
 
   # GET /clubs/1/edit
@@ -72,6 +73,6 @@ class ClubsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def club_params
-      params.require(:club).permit(:name, :address, :start_year, :league_id, :coach_id, :stadium_id)
+      params.require(:club).permit(:name, :address, :start_year, :league_id, :coach_id, :stadium_id, :sponsor_id)
     end
 end

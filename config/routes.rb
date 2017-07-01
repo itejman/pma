@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :matches
   resources :sponsors
   resources :stadia
   resources :coaches
