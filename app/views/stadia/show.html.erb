@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stadium.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @stadium.address %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @stadium.amount %>
+</p>
+
+<%= link_to 'Edit', edit_stadium_path(@stadium) %> |
+<%= link_to 'Back', stadia_path %>

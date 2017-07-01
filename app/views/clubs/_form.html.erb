@@ -34,6 +34,11 @@
     <%= f.select :coach_id, @coaches %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :stadium %><br>
+    <%= f.select :stadium_id, @stadiums %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Dodaj Klub", class: "btn btn-primary" %>
   </div>
