@@ -31,6 +31,12 @@
     <%= f.label :growth %><br>
     <%= f.text_field :growth %>
   </div>
+
+  <div class="field">
+    <%= f.label :club %><br>
+    <%= f.select :club_id, @clubs %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -15,6 +15,7 @@ class PlayersController < ApplicationController
   # GET /players/new
   def new
     @player = Player.new
+    @clubs = Club.all_club_name_with_ids
   end
 
   # GET /players/1/edit
@@ -65,10 +66,11 @@ class PlayersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_player
       @player = Player.find(params[:id])
+      @clubs = Club.all_club_name_with_ids
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:name, :surname, :age, :position, :growth)
+      params.require(:player).permit(:name, :surname, :age, :position, :growth,:club_id)
     end
 end
