@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :employees
+  resources :bans
+  resources :hooligans
   resources :matches
   resources :sponsors
   resources :stadia

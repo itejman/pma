@@ -1,0 +1,2 @@
+module HooligansHelper
+end

@@ -8,4 +8,6 @@ class Match < ActiveRecord::Base
     Club.where(id: guest_id).first
   end
 
+
+
 end

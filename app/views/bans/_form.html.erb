@@ -1,0 +1,29 @@
+<%= form_for(@ban) do |f| %>
+  <% if @ban.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ban.errors.count, "error") %> prohibited this ban from being saved:</h2>
+
+      <ul>
+      <% @ban.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :hooligan_id %><br>
+    <%= f.select :hooligan_id, @hooligans %>
+  </div>
+  <div class="form-group">
+    <%= f.label :stadium_id %><br>
+    <%= f.select :stadium_id, @stadiums %>
+  </div>
+  <div class="form-group">
+    <%= f.label :number_of_years %><br>
+    <%= f.number_field :number_of_years %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

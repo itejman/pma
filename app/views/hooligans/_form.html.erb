@@ -1,0 +1,29 @@
+<%= form_for(@hooligan) do |f| %>
+  <% if @hooligan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hooligan.errors.count, "error") %> prohibited this hooligan from being saved:</h2>
+
+      <ul>
+      <% @hooligan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :pesel %><br>
+    <%= f.text_field :pesel %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

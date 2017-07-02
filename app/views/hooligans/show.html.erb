@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @hooligan.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @hooligan.last_name %>
+</p>
+
+<p>
+  <strong>Pesel:</strong>
+  <%= @hooligan.pesel %>
+</p>
+
+<%= link_to 'Edit', edit_hooligan_path(@hooligan) %> |
+<%= link_to 'Back', hooligans_path %>
