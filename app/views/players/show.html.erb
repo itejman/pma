@@ -1,34 +1,30 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+<div class="alert alert-success">
+  <p class="text-center"><%= notice %></p>
+</div>
+<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @player.name %>
-</p>
+<h1><%= @player.name %> <%= @player.surname %></h1>
+<hr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Wiek piłkarza</th>
+      <th>Pozcja na boisku</th>
+      <th>Wzrost</th>
+      <th>Klub piłkarski</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @player.age %></td>
+      <td><%= @player.position %></td>
+      <td><%= @player.growth %></td>
+      <td><%= @player.club %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Surname:</strong>
-  <%= @player.surname %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @player.age %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @player.position %>
-</p>
-
-<p>
-  <strong>Growth:</strong>
-  <%= @player.growth %>
-</p>
-
-<p>
-  <strong>CLub:</strong>
-  <%= @player.club %>
-</p>
-
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
+<hr>
+<%= link_to 'Edytuj piłkarza', edit_player_path(@player), class: "btn btn-warning" %>
+<%= link_to 'Lista wszystkich piłkarzy', players_path, class: "btn btn-mas" %>

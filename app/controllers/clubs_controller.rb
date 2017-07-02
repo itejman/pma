@@ -2,6 +2,7 @@ class ClubsController < ApplicationController
   before_action :set_club, only: [:show, :edit, :update, :destroy]
 
   def index
+    # dodatek do gem kaminari per() wyswietla ilosc wpisów na stronie
     @clubs = Club.page(params[:page]).per(8)
   end
 
@@ -29,6 +30,7 @@ class ClubsController < ApplicationController
     @coaches = Coach.all_coach_name_with_ids
     @stadiums = Stadium.all_stadnium_name_with_ids
     @sponsors = Sponsor.all_sponsor_name_with_ids
+
 
     respond_to do |format|
       if @club.save
