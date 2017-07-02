@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
 
+gem 'kaminari'
+
 gem 'rb-readline'
 
 gem 'devise'

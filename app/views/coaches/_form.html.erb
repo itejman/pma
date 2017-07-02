@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.label "Imię" %><br>
+    <%= f.text_field :first_name, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.label "Nazwisko" %><br>
+    <%= f.text_field :last_name, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :age %><br>
-    <%= f.number_field :age %>
+    <%= f.label "Wiek" %><br>
+    <%= f.number_field :age, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Dodaj trenera", class: "btn btn-primary" %>
   </div>
 <% end %>

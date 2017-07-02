@@ -5,6 +5,7 @@ class PlayersController < ApplicationController
   # GET /players.json
   def index
     @players = Player.all
+    @clubs = Club.all_club_name_with_ids
   end
 
   # GET /players/1
@@ -15,7 +16,6 @@ class PlayersController < ApplicationController
   # GET /players/new
   def new
     @player = Player.new
-    @clubs = Club.all_club_name_with_ids
   end
 
   # GET /players/1/edit

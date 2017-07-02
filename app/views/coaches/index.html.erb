@@ -34,7 +34,11 @@
   </tbody>
 </table>
 
-<br>
 <% if user_signed_in? %>
-  <%= link_to 'New Coach', new_coach_path, class: "btn btn-primary" %>
+  <%= link_to 'Dodaj nowego trenera', new_coach_path, class: "btn btn-primary" %>
 <% end %>
+<hr>
+<div class="text-center">
+  <%= paginate @coaches %>
+</div>
+<hr>

@@ -6,4 +6,5 @@ class Player < ActiveRecord::Base
   def to_s
     "#{name} #{surname}"
   end
+
 end

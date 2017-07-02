@@ -12,32 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label "Imię" %><br>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :surname %><br>
-    <%= f.text_field :surname %>
+    <%= f.label "Nazwisko" %><br>
+    <%= f.text_field :surname, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :age %><br>
-    <%= f.text_field :age %>
+    <%= f.label "Wiek" %><br>
+    <%= f.text_field :age, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :position %><br>
-    <%= f.text_field :position %>
+    <%= f.label "Pozycja na boisku" %><br>
+    <%= f.text_field :position, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :growth %><br>
-    <%= f.text_field :growth %>
+    <%= f.label "Zwrost" %><br>
+    <%= f.text_field :growth, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :club %><br>
+  <div class="field s-mas">
+    <%= f.label "Aktualny klub" %><br>
     <%= f.select :club_id, @clubs %>
   </div>
-
+  <hr>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Dodaj piłkarza", class: "btn btn-primary" %>
   </div>
 <% end %>

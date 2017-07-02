@@ -4,7 +4,7 @@
 </div>
 <% end %>
 
-<h1 class="text-center">Klubu Piłkarskie</h1>
+<h1 class="text-center">Kluby Piłkarskie</h1>
 
 <hr>
 
@@ -43,3 +43,8 @@
 <% if user_signed_in? %>
   <%= link_to 'Dodaj nowy klub', new_club_path, class: "btn btn-primary" %>
 <% end %>
+<hr>
+<div class="text-center">
+  <%= paginate @clubs %>
+</div>
+<hr>
