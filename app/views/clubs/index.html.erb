@@ -1,8 +1,9 @@
 <% if notice %>
 <div class="alert alert-success">
-  <%= notice %>
+  <p class="text-center"><%= notice %></p>
 </div>
 <% end %>
+
 <h1 class="text-center">Klubu Piłkarskie</h1>
 
 <hr>
@@ -40,5 +41,5 @@
   </tbody>
 </table>
 <% if user_signed_in? %>
-  <%= link_to 'Dodaj nowy club', new_club_path, class: "btn btn-primary" %>
+  <%= link_to 'Dodaj nowy klub', new_club_path, class: "btn btn-primary" %>
 <% end %>

@@ -24,27 +24,27 @@
   </div>
   <div class="form-group">
     <%= f.label :start_year, "Data założenia klubu" %><br>
-    <%= f.datetime_select :start_year, class: "form-control"  %>
+    <%= f.datetime_select :start_year  %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :league %><br>
-    <%= f.select :league_id, @leagues %>
+  <div class="form-group s-mas">
+    <%= f.label 'Nazwa Ligi' %><br>
+    <%= f.select :league_id, @leagues, { class: "select-mas" }  %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :coach %><br>
-    <%= f.select :coach_id, @coaches %>
+  <div class="form-group s-mas">
+    <%= f.label 'Trener' %><br>
+    <%= f.select :coach_id, @coaches, class: "select-mas"  %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :stadium %><br>
-    <%= f.select :stadium_id, @stadiums %>
+  <div class="form-group s-mas">
+    <%= f.label 'Nazwa Stadionu' %><br>
+    <%= f.select :stadium_id, @stadiums, class: "select-mas" %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group s-mas">
     <%= f.label 'Główny sponsor' %><br>
-    <%= f.select :sponsor_id, @sponsors %>
+    <%= f.select :sponsor_id, @sponsors, class: "select-mas"  %>
   </div>
 
   <div class="actions">

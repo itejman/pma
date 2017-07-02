@@ -1,6 +1,6 @@
-<h1>Editing Club</h1>
+<h1>Opcja edycji klubu</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @club %> |
-<%= link_to 'Back', clubs_path %>
+<hr>
+<%= link_to 'Pokaż profil klubu', @club, class: "btn btn-info" %>
+<%= link_to 'Lista wszystkich klubów', clubs_path, class: "btn btn-default btn-mas" %>

@@ -34,6 +34,8 @@
               <li <% if params[:controller] == "coaches" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Trenerzy", coaches_path %></li>
               <li <% if params[:controller] == "matches" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Mecze", matches_path %></li>
               <li <% if params[:controller] == "sponsors" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Sponsorzy", sponsors_path %></li>
+              <li <% if params[:controller] == "leagues" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Liga", leagues_path %></li>
+
               <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kluby<span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -71,5 +73,14 @@
     <%= yield %>
   </div>
 </div>
+<footer class="container-fluid" >
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <p class="text-center">Ireneusz Tejman - Projekt MAS</p>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

@@ -1,43 +1,34 @@
-
-
-<% if flash[:notice].present? %>
+<% if notice %>
   <div class="alert alert-success text-center">
-    <%= notice %>
+    <p class="text-center"><%= notice %></p>
   </div>
 <% end %>
+<h1><%= @club.name %></h1>
+<hr>
+<table class="table table-striped table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>Adres klubu</th>
+      <th>Data startu</th>
+      <th>Liga</th>
+      <th>Trener</th>
+      <th>Stadion</th>
+      <th>Sponsor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @club.address %></td>
+      <td><%= format_date(@club.start_year) %></td>
+      <td><%= @club.league %></td>
+      <td><%= @club.coach %></td>
+      <td><%= @club.stadium %></td>
+      <td><%= @club.sponsor %></td>
+    </tr>
+  </tbody>
+</table>
 
-<strong>Name:</strong>
-  <%= @club.name %>
-</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @club.address %>
-</p>
 
-<p>
-  <strong>Start year:</strong>
-  <%= @club.start_year %>
-</p>
-
-<p>
-  <strong>League:</strong>
-  <%= @club.league %>
-</p>
-
-<p>
-  <strong>Coach:</strong>
-  <%= @club.coach %>
-</p>
-<p>
-  <strong>Staidum:</strong>
-  <%= @club.stadium %>
-</p>
-
-<p>
-  <strong>Sponsor:</strong>
-  <%= @club.stadium %>
-</p>
-
-<!-- <%= link_to 'Edit', edit_club_path(@club) %> |
-<%= link_to 'Back', clubs_path %> -->
+ <%= link_to 'Edytuj', edit_club_path(@club), class: "btn btn-warning" %>
+<%= link_to 'Lista klubów', clubs_path, class: "btn btn-primary" %>

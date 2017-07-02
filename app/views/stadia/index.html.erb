@@ -3,7 +3,7 @@
 <% end %>
 
 <h1>Lista stadionów</h1>
-
+<hr>
 <table class="table table-striped table-responsive table-hover">
   <thead>
     <tr>
@@ -12,8 +12,8 @@
       <th>Ilość krzesełek</th>
       <th>Więcej</th>
       <% if user_signed_in? %>
-        <th>Edytuj</th>
-        <th>Usuń</th>
+        <th>Edytuj stadion</th>
+        <th>Usuń stadnion</th>
       <% end %>
     </tr>
   </thead>
@@ -23,11 +23,11 @@
       <tr>
         <td><%= stadium.name %></td>
         <td><%= stadium.address %></td>
-        <td><%= stadium.amount %></td>
-        <td><%= link_to 'Show', stadium, class: "btn btn-info btn-sm" %></td>
+        <td><%= stadium.amount %> krzesełek</td>
+        <td><%= link_to 'Więcej', stadium, class: "btn btn-info btn-sm" %></td>
         <% if user_signed_in? %>
-          <td><%= link_to 'Edit', edit_stadium_path(stadium), class: "btn btn-warning btn-sm" %></td>
-          <td><%= link_to 'Destroy', stadium, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
+          <td><%= link_to 'Edytuj', edit_stadium_path(stadium), class: "btn btn-warning btn-sm" %></td>
+          <td><%= link_to 'Usuń', stadium, method: :delete, class: "btn btn-danger btn-sm" %></td>
         <% end %>
       </tr>
     <% end %>

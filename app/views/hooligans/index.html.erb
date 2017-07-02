@@ -1,14 +1,20 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-success text-center"><%= notice %></p>
+<% end %>
 
-<h1>Listing Hooligans</h1>
-
-<table>
+<h1>Lista Wszystkich Kibiców</h1>
+<hr>
+<table class="table table-striped table-responsive table-hover">
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
+      <th>Imię</th>
+      <th>Nazwisko</th>
       <th>Pesel</th>
-      <th colspan="3"></th>
+      <th>Pokaż więcej</th>
+      <% if user_signed_in? %>
+        <th>Edytuj kibica</th>
+        <th>Usuń kibica</th>
+      <% end %>
     </tr>
   </thead>
 
@@ -18,14 +24,17 @@
         <td><%= hooligan.first_name %></td>
         <td><%= hooligan.last_name %></td>
         <td><%= hooligan.pesel %></td>
-        <td><%= link_to 'Show', hooligan %></td>
-        <td><%= link_to 'Edit', edit_hooligan_path(hooligan) %></td>
-        <td><%= link_to 'Destroy', hooligan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Pokaż', hooligan, class: "btn btn-info btn-sm" %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edytuj', edit_hooligan_path(hooligan), class: "btn btn-warning btn-sm" %></td>
+          <td><%= link_to 'Usuń', hooligan, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Hooligan', new_hooligan_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Dodaj nowego kibica', new_hooligan_path, class: "btn btn-primary" %>
+<% end %>

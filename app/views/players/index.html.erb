@@ -1,16 +1,24 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+<div class="alert alert-success">
+  <p class="text-center"><%= notice %></p>
+</div>
+<% end %>
 
 <h1>Listing Players</h1>
-
+<hr>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Surname</th>
-      <th>Age</th>
-      <th>Position</th>
-      <th>Growth</th>
-      <th colspan="3"></th>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Wiek</th>
+      <th>Pozycja</th>
+      <th>Zwrost</th>
+      <th>Pokaż więcej</th>
+      <% if user_signed_in? %>
+        <th>Edytuj Piłkarza</th>
+        <th>Usuń Piłkarza</th>
+      <% end %>
     </tr>
   </thead>
 
@@ -21,15 +29,18 @@
         <td><%= player.surname %></td>
         <td><%= player.age %></td>
         <td><%= player.position %></td>
-        <td><%= player.growth %></td>
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= player.growth %> cm</td>
+        <td><%= link_to 'Pokaż', player, class: "btn btn-info btn-sm"  %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edytuj', edit_player_path(player), class: "btn btn-warning btn-sm"  %></td>
+          <td><%= link_to 'Usuń', player, method: :delete, data: { confirm: 'Czy napewno chcesz usunąć piłkarza?' }, class: "btn btn-danger btn-sm"  %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Player', new_player_path, class: "btn btn-primary" %>
+<% if user_signed_in? %>
+  <%= link_to 'Dodaj piłkarza', new_player_path, class: "btn btn-primary" %>
+<% end %>

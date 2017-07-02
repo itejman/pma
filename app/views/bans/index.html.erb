@@ -1,16 +1,22 @@
 <% if notice %>
-  <div id="alert alert-success text-center"><%= notice %></div>
+  <div id="alert alert-success text-center">
+    <p class="text-center"><%= notice %></p>
+  </div>
 <% end %>
 
 <h1 class="text-center">Lista wszytkich zakazów</h1>
-
+<hr>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Imie i nazwisko</th>
       <th>Stadion</th>
       <th>Okres</th>
-      <th colspan="3"></th>
+      <th>Pokaż więcej</th>
+      <% if user_signed_in? %>
+        <th>Edytuj zakaz</th>
+        <th>Usuń zakaz</th>
+      <% end %>
     </tr>
   </thead>
 
@@ -20,14 +26,17 @@
         <td><%= ban.hooligan %></td>
         <td><%= ban.stadium %></td>
         <td><%= ban.number_of_years %> lat</td>
-        <td><%= link_to 'Show', ban %></td>
-        <td><%= link_to 'Edit', edit_ban_path(ban) %></td>
-        <td><%= link_to 'Destroy', ban, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Więcej', ban, class: "btn btn-info btn-sm"  %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edytuj zakaz', edit_ban_path(ban), class: "btn btn-warning btn-sm"  %></td>
+          <td><%= link_to 'Usuń zakaz', ban, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Ban', new_ban_path, class: "btn btn-primary" %>
+<% if user_signed_in? %>
+<%= link_to 'Dodaj nowy zakaz', new_ban_path, class: "btn btn-primary" %>
+<% end %>

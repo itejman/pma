@@ -12,24 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :host_id %><br>
-    <%= f.select :host_id, @clubs %>
+    <%= f.label 'Gospodarze' %><br>
+    <%= f.select :host_id, @clubs, class: "form-control"%>
   </div>
   <div class="field">
-    <%= f.label :guest_id %><br>
-    <%= f.select :guest_id, @clubs %>
+    <%= f.label 'Goście' %><br>
+    <%= f.select :guest_id, @clubs, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :host_goals %><br>
-    <%= f.number_field :host_goals %>
+    <%= f.label 'Bramek dla gospodarzy' %><br>
+    <%= f.number_field :host_goals, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :guest_goals %><br>
-    <%= f.number_field :guest_goals %>
+    <%= f.label 'Bramek dla gości' %><br>
+    <%= f.number_field :guest_goals, class: "form-control" %>
   </div>
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Dodaj wynik meczu", class: 'btn btn-primary' %>
   </div>
 <% end %>
