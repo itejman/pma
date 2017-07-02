@@ -25,5 +25,4 @@ class Club < ActiveRecord::Base
     Sponsor.where(id: sponsor_id).first
   end
 
-
 end

@@ -19,15 +19,22 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Liga</a>
+            <a class="navbar-brand" href="<%= root_path %>">Liga</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to "Zakazy", bans_path %></li>
-              <li><%= link_to "Piłkarze", players_path %></li>
-              <li class="dropdown">
+              <li <% if params[:controller] == "clubs" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Kluby", clubs_path %></li>
+              <li <% if params[:controller] == "stadia" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Stadiony", stadia_path %></li>
+              <li <% if params[:controller] == "bans" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Zakazy", bans_path %></li>
+              <li <% if params[:controller] == "hooligans" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Kibice", hooligans_path %></li>
+              <li <% if params[:controller] == "employees" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Pracownicy", employees_path %></li>
+              <li <% if params[:controller] == "players" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Piłkarze", players_path %></li>
+              <li <% if params[:controller] == "coaches" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Trenerzy", coaches_path %></li>
+              <li <% if params[:controller] == "matches" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Mecze", matches_path %></li>
+              <li <% if params[:controller] == "sponsors" && params[:action] == "index" %> class="active" <% end %>><%= link_to "Sponsorzy", sponsors_path %></li>
+              <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kluby<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">Action</a></li>
@@ -36,7 +43,7 @@
                   <li role="separator" class="divider"></li>
                   <li><a href="#">Separated link</a></li>
                 </ul>
-              </li>
+              </li> -->
               <li>
                 <% if user_signed_in? %>
                   <%= link_to "Wyloguj się", destroy_user_session_path, method: :delete %>
@@ -60,7 +67,7 @@
           </div>
         <% end %>
   </div>
-  <div class="row">
+  <div class="row page">
     <%= yield %>
   </div>
 </div>

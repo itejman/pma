@@ -1,13 +1,15 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div id="alert alert-success text-center"><%= notice %></div>
+<% end %>
 
-<h1>Listing Bans</h1>
+<h1 class="text-center">Lista wszytkich zakazów</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Hooligan</th>
-      <th>Stadium</th>
-      <th>Number of years</th>
+      <th>Imie i nazwisko</th>
+      <th>Stadion</th>
+      <th>Okres</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +19,7 @@
       <tr>
         <td><%= ban.hooligan %></td>
         <td><%= ban.stadium %></td>
-        <td><%= ban.number_of_years %></td>
+        <td><%= ban.number_of_years %> lat</td>
         <td><%= link_to 'Show', ban %></td>
         <td><%= link_to 'Edit', edit_ban_path(ban) %></td>
         <td><%= link_to 'Destroy', ban, method: :delete, data: { confirm: 'Are you sure?' } %></td>

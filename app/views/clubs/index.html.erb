@@ -1,6 +1,11 @@
-<p id="notice"><%= notice %></p>
-
+<% if notice %>
+<div class="alert alert-success">
+  <%= notice %>
+</div>
+<% end %>
 <h1 class="text-center">Klubu Piłkarskie</h1>
+
+<hr>
 
 <table class="table table-striped">
   <thead>
@@ -10,19 +15,30 @@
       <th>Rok założenia</th>
       <th>Trener</th>
       <th>Liga</th>
+      <th>Więcej</th>
+      <% if user_signed_in? %>
+        <th>Edytuj</th>
+        <th>Usuń</th>
+      <% end %>
     </tr>
   </thead>
 
   <tbody>
     <% @clubs.each do |club| %>
       <tr>
-        <td><%= club.name %></td>
+        <td><%= club.name %></a></td>
         <td><%= club.address %></td>
-        <td><%= club.start_year %></td>
+        <td><%= format_date(club.start_year) %></td>
         <td><%= club.coach %></td>
         <td><%= club.league %></td>
-    <% end %>
+        <td><%= link_to 'Więcej', club, class: "btn btn-info btn-sm" %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edytuj', edit_club_path(club), class: "btn btn-warning btn-sm" %></td>
+          <td><%= link_to 'Usuń', club, method: :delete, data: { confirm: 'Czy jesteś pewny?' }, class: "btn btn-danger btn-sm" %></td>
+        <% end %>
+      <% end %>
   </tbody>
 </table>
-
-<%= link_to 'New Club', new_club_path, class: "btn btn-primary" %>
+<% if user_signed_in? %>
+  <%= link_to 'Dodaj nowy club', new_club_path, class: "btn btn-primary" %>
+<% end %>

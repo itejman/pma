@@ -14,7 +14,30 @@
  *= require_self
  *= require devise_bootstrap_views
  */
+html {
+   font-size: 62.5%;
+ }
 
 .navbar {
   border-radius: 0;
+}
+
+.btn {
+  color: #fff !important
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #000 !important;
+}
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 4rem;
+  text-shadow: .2rem .1rem .5rem #eee;
+  text-align: center;
+}
+
+.page {
+  margin-bottom: 10rem;
 }
