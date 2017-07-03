@@ -37,11 +37,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>
-        Robert Lewandowski
-      </td>
-    </tr>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= @club.name %></a></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 

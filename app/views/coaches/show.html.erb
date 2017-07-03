@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-success">
+    <p class="text-center"><%= notice %></p>
+  </div>
+<% end %>
 
-<p>
-  <strong>First name:</strong>
-  <%= @coach.first_name %>
-</p>
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Wiek</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @coach.first_name %></td>
+      <td><%= @coach.last_name %></td>
+      <td><%= @coach.age %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @coach.last_name %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @coach.age %>
-</p>
-
-<%= link_to 'Edit', edit_coach_path(@coach) %> |
-<%= link_to 'Back', coaches_path %>
+<hr>
+<%= link_to 'Edytuj trenera', edit_coach_path(@coach), class: "btn btn-warning" %> 
+<%= link_to 'Lista wszystkich trenerów', coaches_path, class: "btn btn-mas" %>

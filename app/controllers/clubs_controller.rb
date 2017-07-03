@@ -7,6 +7,7 @@ class ClubsController < ApplicationController
   end
 
   def show
+    @players = Player.all_player_name_and_surname_with_ids
   end
 
   def new
@@ -69,6 +70,6 @@ class ClubsController < ApplicationController
     end
 
     def club_params
-      params.require(:club).permit(:name, :address, :start_year, :league_id, :coach_id, :stadium_id, :sponsor_id)
+      params.require(:club).permit(:name, :address, :start_year, :league_id, :coach_id, :stadium_id, :sponsor_id, :player_id)
     end
 end
